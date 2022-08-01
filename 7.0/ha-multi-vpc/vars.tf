@@ -32,6 +32,12 @@ variable "image" {
   default = "projects/fortigcp-project-001/global/images/fortinet-fgtondemand-705-20220211-001-w-license"
 }
 
+# VM test Image name
+variable "image-vm" {
+  type    = string
+  default = "projects/debian-cloud/global/images/debian-11-bullseye-v20220719"
+}
+
 // HTTPS Port
 variable "adminsport" {
   type    = string
@@ -42,6 +48,11 @@ variable "adminsport" {
 variable "machine" {
   type    = string
   default = "n1-standard-8"
+}
+# GCP instance machine type for testing vm
+variable "machine-vm" {
+  type    = string
+  default = "e2-micro"
 }
 # VPC CIDR
 variable "vpc_cidr" {
@@ -102,6 +113,16 @@ variable "public_gateway" {
 variable "public_mask" {
   type    = string
   default = "255.255.255.0"
+}
+
+# active interface VM test ip assignments
+variable "vm_spoke1_ip" {
+  type    = string
+  default = "172.16.4.4"
+}
+variable "vm_spoke2_ip" {
+  type    = string
+  default = "172.16.5.4"
 }
 
 # active interface ip assignments

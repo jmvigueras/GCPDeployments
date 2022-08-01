@@ -20,6 +20,13 @@ Terraform deploys the following components:
    - Two FortiGate-VM instances with five NICs
    - Firewall rules for allowing traffic to public interface from internal, spoke1 and spoke2, also between spokes.
 
+## HA failover
+SDN connector for GCP is used to update subnets routes and cluster IP.
+   - Subnet private-route is update to fortigate IP on that interface
+   - Subnet spoke1-route is update to fortigate IP on that interface
+   - Subnet spoke2-route is update to fortigate IP on that interface
+   - External IP cluster-ip is linked to public interface
+
 ## Deployment
 To deploy the FortiGate-VM to GCP:
 1. Clone the repository.
