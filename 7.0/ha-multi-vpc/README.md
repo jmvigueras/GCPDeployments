@@ -1,6 +1,6 @@
 # Deployment of FortiGate-VM HA on the Google Cloud Platform (GCP)
 ## Introduction
-A Terraform script to deploy FortiGate-VM HA (A-P) on GCP.
+A Terraform script to deploy FortiGate-VM HA (A-P) on GCP multi Virtual Private Cloud (VPC)
 
 ## Requirements
 * [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) >= 0.12.0
@@ -12,10 +12,13 @@ A Terraform script to deploy FortiGate-VM HA (A-P) on GCP.
 
 ## Deployment overview
 Terraform deploys the following components:
-   - A Virtual Private Cloud (VPC) with one public subnet
-   - A VPC with three private subnets
-   - Two FortiGate-VM instances with four NICs
-   - Four firewall rules: one for external, one for internal, one for sync, and one for HA management.
+   - A VPC with one public subnet - port1 FTG
+   - A VPC INTERNAL - port2 FTG
+   - A VPC SPOKE1 - port4 FTG
+   - A VPC SPOKE2 - port5 FTG
+   - A VPC MGMT and HA - port 3 FTG for management and ha
+   - Two FortiGate-VM instances with five NICs
+   - Firewall rules for allowing traffic to public interface from internal, spoke1 and spoke2, also between spokes.
 
 ## Deployment
 To deploy the FortiGate-VM to GCP:
