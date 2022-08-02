@@ -1,4 +1,4 @@
-# Examples of Fortinet deployments in Azure Cloud
+# Examples of Fortinet deployments in Google Cloud Platform
 
 ### A Terraform scripts to deploy a FortiGate-VM Cluster on GCP
 
