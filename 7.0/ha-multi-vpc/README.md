@@ -17,7 +17,7 @@ Terraform deploys the following components:
    - A VPC SPOKE1 - port4 FTG
    - A VPC SPOKE2 - port5 FTG
    - A VPC MGMT and HA - port 3 FTG for management and ha
-   - Two FortiGate-VM instances with five NICs
+   - Two FortiGate-VM (BYOL/PAYG) instances with five NICs
    - Firewall rules for allowing traffic to public interface from internal, spoke1 and spoke2, also between spokes.
 
 ## Diagram solution
